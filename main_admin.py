@@ -13,7 +13,7 @@ def view_all_users(users : dict) -> None:
         print(f"""User name : {username}
 Balance : {user['balance']:.2f}""")
 def audit_log(event : str , meta : dict) -> None :
-    time = date.time.now().isformat()
+    time = date.time.now().isoformat()
     print(f"[{time}] EVENT: {event} | META: {meta}")
 def update_interest_rate(config : dict , new_rate : float) -> dict :
     if new_rate < 0 :
@@ -29,4 +29,5 @@ def deactivate_user(users : dict , username : str) -> bool :
     users[username]["active"] = False 
     print(f"User {username} has been deactivated.")
     return True
+
 
